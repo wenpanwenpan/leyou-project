@@ -1,0 +1,28 @@
+server:
+  port: 10010
+
+
+spring:
+  application:
+    name: leyou-gateway
+  cloud:
+    refresh:
+      refreshable: none  #不加入会造成循环依赖?
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+    registry-fetch-interval-seconds: 5
+  instance:
+    prefer-ip-address: true
+
+zuul:
+  prefix: /api # 添加路由前缀
+  routes:
+    item-service: /item/**  #路由到商品的微服务
+    search-service: /search/**  #路由到搜索微服务
+
+  #文件上传不经过网关，不造成不必要的网络负担
+  ignored-services:
+    - upload-service # 忽略upload-service服务

@@ -1,0 +1,37 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: item-service
+  datasource:
+    username: root
+    password: wenpan
+    url: jdbc:mysql://localhost:3306/leyou-project?useUnicode=true&characterEncoding=utf-8
+    hikari:
+      maximum-pool-size: 30
+      minimum-idle: 10
+  cloud:        #必须要加，不然服务起不来
+    refresh:
+      refreshable: none
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+  instance:
+    prefer-ip-address: true     #显示服务的ip地址
+    ip-address: 127.0.0.1
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 15
+
+# 通用 Mapper 配置
+mapper:
+  identity: MYSQL
+  not-empty: false
+
+
+#显示sql语句
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+  type-aliases-package: com.leyou.item.pojo  #mybatis要扫描的pojo对象的包（在interface模块中）
