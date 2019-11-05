@@ -15,6 +15,7 @@
         <module>leyou-common</module>
         <module>leyou-upload</module>
         <module>leyou-elasticsearch</module>
+        <module>leyou-goods-web</module>
     </modules>
 
     <name>leyou父工程</name>

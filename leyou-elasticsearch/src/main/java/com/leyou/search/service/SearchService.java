@@ -337,12 +337,15 @@ public class SearchService {
         buckets.forEach(bucket -> {
             cids.add(bucket.getKeyAsNumber().longValue());
         });
+        //names需要判空
         List<String> names = this.categoryClient.queryNameByIds(cids);
-        for (int i = 0; i < cids.size(); i++) {
-            Map<String, Object> map = new HashMap<>();
-            map.put("id", cids.get(i));
-            map.put("name", names.get(i));
-            categories.add(map);
+        if(!CollectionUtils.isEmpty(names)){
+            for (int i = 0; i < cids.size(); i++) {
+                Map<String, Object> map = new HashMap<>();
+                map.put("id", cids.get(i));
+                map.put("name", names.get(i));
+                categories.add(map);
+            }
         }
         return categories;
     }
@@ -383,4 +386,27 @@ public class SearchService {
         return boolQueryBuilder;
     }
 
+    /**
+     * 向索引库里面创建一条数据
+     * @param id
+     * @throws Exception
+     */
+    public void createIndex(Long id) throws Exception{
+
+        Spu spu = goodsClient.querySpuById(id);//通过id取得spu商品数据
+        //构建商品
+        Goods goods = this.buildGoods(spu);
+
+        //保存数据到索引库
+        this.goodsRepository.save(goods);
+    }
+
+    /**
+     * 从索引库里面删除一条数据
+     * @param id
+     */
+    public void deleteIndex(Long id) {
+
+        this.goodsRepository.deleteById(id);
+    }
 }

@@ -10,6 +10,15 @@ spring:
     hikari:
       maximum-pool-size: 30
       minimum-idle: 10
+  rabbitmq:
+    host: 192.168.1.100
+    username: leyou
+    password: leyou
+    virtual-host: /leyou
+    template:
+      exchange: leyou.item.exchange
+    publisher-confirms: true
+
   cloud:        #必须要加，不然服务起不来
     refresh:
       refreshable: none

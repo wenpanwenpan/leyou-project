@@ -7,6 +7,11 @@ spring:
     elasticsearch:
       cluster-name: elasticsearch
       cluster-nodes: 192.168.1.100:9300
+  rabbitmq:
+    virtual-host: /leyou
+    host: 192.168.1.100
+    username: leyou
+    password: leyou
   jackson:
     default-property-inclusion: non_null # 配置json处理时忽略空值
 eureka:
