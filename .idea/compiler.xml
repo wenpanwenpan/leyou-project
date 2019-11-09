@@ -6,6 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="leyou-auth-common" />
+        <module name="leyou-auth-service" />
         <module name="leyou-common" />
         <module name="leyou-elasticsearch" />
         <module name="leyou-getway" />
@@ -13,7 +15,10 @@
         <module name="leyou-item-interface" />
         <module name="leyou-item-service" />
         <module name="leyou-registry" />
+        <module name="leyou-sms-service" />
         <module name="leyou-upload" />
+        <module name="leyou-user-interface" />
+        <module name="leyou-user-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -23,6 +28,9 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="leyou-auth" options="-parameters" />
+      <module name="leyou-auth-common" options="-parameters" />
+      <module name="leyou-auth-service" options="-parameters" />
       <module name="leyou-common" options="-parameters" />
       <module name="leyou-elasticsearch" options="-parameters" />
       <module name="leyou-getway" options="-parameters" />
@@ -31,7 +39,11 @@
       <module name="leyou-item-service" options="-parameters" />
       <module name="leyou-registry" options="-parameters" />
       <module name="leyou-search" options="-parameters" />
+      <module name="leyou-sms-service" options="-parameters" />
       <module name="leyou-upload" options="-parameters" />
+      <module name="leyou-user" options="-parameters" />
+      <module name="leyou-user-interface" options="-parameters" />
+      <module name="leyou-user-service" options="-parameters" />
       <module name="leyousearch" options="-parameters" />
     </option>
   </component>

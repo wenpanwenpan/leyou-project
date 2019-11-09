@@ -47,7 +47,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <!--商品微服务-->
+        <!--商品微服务，需要调用商品微服务的接口-->
         <dependency>
             <groupId>com.leyou.item</groupId>
             <artifactId>leyou-item-interface</artifactId>

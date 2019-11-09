@@ -1,0 +1,14 @@
+#将一些常量抽取到yml文件中
+leyou:
+  sms:
+    accessKeyId: LTAI4FfjafbtgVkLupzfgQ8M     # 你自己的accessKeyId
+    accessKeySecret: 41BUnPsdIfMGm7vg3tGPyMS7uLHwrC    # 你自己的AccessKeySecret
+    signName: 乐优商城注册                 # 签名名称
+    verifyCodeTemplate: SMS_176943372 # 模板名称
+
+spring:
+  rabbitmq:
+    virtual-host: /leyou
+    username: leyou
+    password: leyou
+    host: 192.168.1.100

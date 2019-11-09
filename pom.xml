@@ -16,6 +16,9 @@
         <module>leyou-upload</module>
         <module>leyou-elasticsearch</module>
         <module>leyou-goods-web</module>
+        <module>leyou-user</module>
+        <module>leyou-sms-service</module>
+        <module>leyou-auth</module>
     </modules>
 
     <name>leyou父工程</name>
