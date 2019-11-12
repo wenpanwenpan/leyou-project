@@ -23,6 +23,7 @@ zuul:
     search-service: /search/**  #路由到搜索微服务
     user-service: /user/**   #路由到用户微服务
     auth-service: /auth/**   #路由到授权中心微服务
+    cart-service: /cart/**   #路由到购物车微服务
   #文件上传不经过网关，不造成不必要的网络负担
   ignored-services:
     - upload-service # 忽略upload-service服务

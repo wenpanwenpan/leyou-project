@@ -5,7 +5,7 @@ leyou:
     priKeyPath: C:\\tmp\\rsa\\rsa.pri # 生成私钥的地址
     expire: 30 # 过期时间,单位分钟
     cookieName: LY_TOKEN
-    cookieMaxAge: 30
+    cookieMaxAge: 1800   #cookie过期时间 ，单位秒
 server:
   port: 8888
 

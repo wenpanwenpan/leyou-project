@@ -1,0 +1,17 @@
+leyou:
+  jwt:
+    pubKeyPath: C:/tmp/rsa/rsa.pub # 公钥地址
+    cookieName: LY_TOKEN # cookie的名称
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+  instance:
+    lease-renewal-interval-in-seconds: 5 # 每隔5秒发送一次心跳
+    lease-expiration-duration-in-seconds: 10 # 10秒不发送就过期
+spring:
+  application:
+    name: cart-service
+  redis:
+    host: 192.168.1.100
+    port: 6379

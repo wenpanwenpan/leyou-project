@@ -107,4 +107,19 @@ public class GoodsController {
         }
         return ResponseEntity.ok(spu);
     }
+
+    /**
+     * 通过sku的id查询sku
+     * @param id
+     * @return
+     */
+    @GetMapping("sku/{id}")
+    public ResponseEntity<Sku> querySkuById(@PathVariable("id") Long id){
+
+        Sku sku  = this.goodsService.querySkuById(id);
+        if(sku == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return ResponseEntity.ok(sku);
+    }
 }

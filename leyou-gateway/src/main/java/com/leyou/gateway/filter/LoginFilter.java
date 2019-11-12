@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletRequest;
  * 若校验不通过则直接返回给浏览器端
  */
 @Component
-@EnableConfigurationProperties(JwtProperties.class)
+@EnableConfigurationProperties({JwtProperties.class,FilterProperties.class})
 public class LoginFilter extends ZuulFilter {
 
     @Autowired
@@ -62,12 +62,12 @@ public class LoginFilter extends ZuulFilter {
         //获取request
         HttpServletRequest request = context.getRequest();
         //获取路径
-        String requestURL = (String) request.getRequestURL().toString();
+        String requestURL = request.getRequestURL().toString();
         //判断白名单
         //遍历允许放行的路径
         for (String allowPath : filterProperties.getAllowPaths()) {
-            //然后判断是否符合
-            if(requestURL.startsWith(allowPath)){
+            //然后判断是否符合requestURL.startsWith(allowPath)
+            if(requestURL.contains(allowPath)){
                 return false;
             }
         }
