@@ -33,6 +33,19 @@ zuul:
   #网关默认会将请求头和响应头中的敏感头信息都过滤掉，这里设置为null则请求头就不会被过滤掉
   sensitive-headers:  #配置禁止使用头信息，这里设置为null,否则set-cookie无效
 
+ribbon:
+  ConnectTimeout: 1000 # 连接超时时间(ms)
+  ReadTimeout: 3500 # 通信超时时间(ms)
+  MaxAutoRetriesNextServer: 0 # 同一服务不同实例的重试次数
+  MaxAutoRetries: 0 # 同一实例的重试次数
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMillisecond: 10000 # 熔断超时时长：10000ms
 leyou:
   jwt:
     pubKeyPath:  C:\\tmp\\rsa\\rsa.pub # 公钥地址

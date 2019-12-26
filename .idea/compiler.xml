@@ -11,7 +11,7 @@
         <module name="leyou-cart" />
         <module name="leyou-common" />
         <module name="leyou-elasticsearch" />
-        <module name="leyou-getway" />
+        <module name="leyou-gateway" />
         <module name="leyou-goods-web" />
         <module name="leyou-item-interface" />
         <module name="leyou-item-service" />
@@ -36,7 +36,7 @@
       <module name="leyou-cart" options="-parameters" />
       <module name="leyou-common" options="-parameters" />
       <module name="leyou-elasticsearch" options="-parameters" />
-      <module name="leyou-getway" options="-parameters" />
+      <module name="leyou-gateway" options="-parameters" />
       <module name="leyou-goods-web" options="-parameters" />
       <module name="leyou-item-interface" options="-parameters" />
       <module name="leyou-item-service" options="-parameters" />
